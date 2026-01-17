@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нотаріуси Савченко К.Є. та Савченко С.А. | Кам'янське</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1e3a5f;
+            --navy-light: #2d5573;
+            --gold: #d4af37;
+            --gold-light: #e8c968;
+            --cream: #faf8f3;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-gray: #6b7280;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: left;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero-location {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Services */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* About */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .feature-text h4 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .about-image {
+            background: var(--navy);
+            border-radius: 12px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .about-image-content {
+            font-size: 1.2rem;
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            color: var(--text-gray);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 500px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-badge">Н</div>
+                <span>Нотаріальна контора</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#services">Послуги</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <h1>Нотаріальні послуги<br>у Кам'янському</h1>
+            <p class="hero-subtitle">Приватні нотаріуси <b>Савченко Катерина Євгеніївна</b> та <b>Савченко Світлана Андріївна</b></p>
+            <p class="hero-location">📍 м. Кам'янське, Дніпропетровська область просп. Свободи 55-1</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Записатися на прийом</a>
+                <a href="#services" class="btn btn-secondary">Наші послуги</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Нотаріальні послуги</h2>
+            <p class="section-subtitle">Повний спектр нотаріальних дій з дотриманням законодавства України</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Нерухомість</h3>
+                    <p>Посвідчення договорів купівлі-продажу, дарування, міни нерухомого майна. Оформлення іпотеки та застави.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>Договори</h3>
+                    <p>Посвідчення різноманітних цивільно-правових договорів: позики, ренти, дарування, застави тощо.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>Довіреності</h3>
+                    <p>Оформлення довіреностей на всі види юридичних дій, у тому числі генеральних довіреностей.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Спадкові справи</h3>
+                    <p>Ведення спадкових справ, оформлення спадщини за заповітом та за законом, посвідчення заповітів.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔏</div>
+                    <h3>Засвідчення копій</h3>
+                    <p>Засвідчення копій документів, вірності перекладів, справжності підпису на документах.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Корпоративні дії</h3>
+                    <p>Посвідчення установчих документів, рішень учасників, протоколів зборів юридичних осіб.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Чому обирають нас</h2>
+            <p class="section-subtitle">Професійний підхід та індивідуальне обслуговування</p>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Професійна нотаріальна допомога</h2>
+                    <p>Наша нотаріальна контора працює з 2012 року, надаючи професійні юридичні послуги мешканцям Кам'янського та Дніпропетровської області.</p>
+                    <p>Ми гарантуємо якісне та своєчасне виконання всіх нотаріальних дій відповідно до законодавства України, індивідуальний підхід до кожного клієнта та конфіденційність.</p>
+
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Досвідчений нотаріус</h4>
+                                <p>Понад 20 років практики у нотаріальній сфері</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Зручний графік роботи</h4>
+                                <p>Працюємо з 9:00 до 16:00 у будні дні, з 9:10 до 13:00 у Суботу, у неділю вихідний</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Прозорі ціни</h4>
+                                <p>Чіткі тарифи без прихованих платежів</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <div class="about-image-content">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">⚖️</div>
+                        <p>Професійні нотаріальні послуги<br>в Кам'янському</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Контакти</h2>
+            <p class="section-subtitle">Ми завжди раді вам допомогти. Зв'яжіться з нами зручним способом</p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Адреса</h3>
+                            <p>51900, Дніпропетровська обл.,</p>
+                            <p>м. Кам'янське, просп. Свободи 55 приміщення 1</p>
+                            <p>(1-й поверх)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Телефони</h3>
+                            <p><a href="tel:+380677176627">+38 (067) 717-66-27 Катерина Євгеніївна</a></p>
+                            <p><a href="tel:+380671234567">+38 (067) 731-76-79 Світлана Андріївна</a></p>
+                    
+
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-details">
+                            <h3>Графік роботи</h3>
+                            <p>Понеділок - П'ятниця: 9:00 - 18:00</p>
+                            <p>Субота: 10:00 - 15:00</p>
+                            <p>Неділя: за попереднім записом</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Електронна пошта</h3>
+                            <p><a href="mailto:kat.notar@gmail.com">kat.notar@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467.22280003087315!2d34.61343697808409!3d48.51384841850434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbdbfe3e4f7c55%3A0xb202673278bb71c0!2z0J3QvtGC0LDRgNC40LDQu9GM0L3QsNGPINC60L7QvdGC0L7RgNCwINCh0LDQstGH0LXQvdC60L4g0Jou0IQuLCDQodCw0LLRh9C10L3QutC-INChLtCQLg!5e0!3m2!1sru!2sua!4v1768639751688!5m2!1sru!2sua" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Про нотаріуса</h3>
+                <p>Приватні нотаріуси Кам'янського міського нотаріального округу:</p>
+                <p>Савченко Катерина Євгеніївна</p>
+                <p>Савченко Світлана Андріївна</p>
+                <p>Свідоцтво про право на зайняття нотаріальною діяльністю</p>
+            </div>
+            <div class="footer-section">
+                <h3>Послуги</h3>
+                <a href="#services">Нерухомість</a>
+                <a href="#services">Договори</a>
+                <a href="#services">Довіреності</a>
+                <a href="#services">Спадкові справи</a>
+                <a href="#services">Засвідчення копій</a>
+            </div>
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <p>📍 м. Кам'янське, просп. Свободи, 55</p>
+                <p>📞 +38 (067) 717-66-27</p>
+                <p>📞 +38 (067) 831-76-79</p>
+                <p>✉️ kat.notar@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Нотаріуси Савченко К.Є. та С.А. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
